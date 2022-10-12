@@ -1,6 +1,6 @@
 baseURL = "https://iamchristian.me/"
 languageCode = "en-us"
-title = "Christian Mendoza / Data Analyst"
+title = "Christian Mendoza / Data Engineer"
 googleAnalytics = "UA-82162805-1"
 disableKinds = ["section", "taxonomy", "taxonomyTerm", "RSS", "sitemap"]
 copyright = "&copy; Christian Mendoza. Built with [Hugo](//gohugo.io). [[source](//github.com/christianmendoza/iamchristian.me)]"
@@ -10,10 +10,10 @@ verboseLog = true
 watch = true
 
 [markup]
-  defaultMarkdownHandler = "blackfriday"
+  defaultMarkdownHandler = "goldmark"
 
 [params]
   # METADATA
   name = "Christian Mendoza"
-  description = "Christian Mendoza is an aspiring data analyst—organizing data, uncovering patterns and insights, and drawing meaningful conclusions."
+  description = "Christian Mendoza is an aspiring data engineer—architecting, building, testing, and maintaining data platforms as a whole."
   socialImage = "/assets/images/social-headshot.jpg"

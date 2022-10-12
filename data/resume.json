@@ -1,7 +1,7 @@
 {
   "basics": {
     "name": "Christian Mendoza",
-    "label": "Data Analyst",
+    "label": "Data Engineer",
     "picture": "/assets/images/christian-headshot.jpg",
     "email": "iamchristian/me/christian",
     "phone": "410/0041/512",
@@ -174,14 +174,14 @@
       "location": "Austin, TX",
       "website": "https://truepill.com/",
       "startDate": "2022-01-31",
-      "endDate": "",
+      "endDate": "2022-09-30",
       "show": true,
       "summary": "Truepill is a digital healthcare infrastructure for more accessible and affordable care. A full-cycle healthcare product, Truepill enables patients to virtually visit doctors, receive at-home tests and prescriptions, and monitor any medications or visits through an app.",
       "responsibilities": [
-        "Support existing products and features across multiple technologies",
-        "Distill high-level user feedback into the product support backlog",
-        "Critically think through user journey and advocate for product enhancements and optimizations",
-        "Recommend customer impacting enhancements for existing software applications, and distributed services that support high-scale web applications"
+        "Supported existing products and features across multiple technologies",
+        "Distilled high-level user feedback into the product support backlog",
+        "Critically thought through user journey and advocated for product enhancements and optimizations",
+        "Recommended customer impacting enhancements for existing software applications, and distributed services that support high-scale web applications"
       ],
       "achievements": [
       ],
@@ -233,7 +233,7 @@
       "gpa": "",
       "courses": [
       ],
-      "show": true
+      "show": false
     },
     {
       "institution": "UC San Diego",
@@ -306,10 +306,7 @@
         "Python",
         "pandas",
         "NumPy",
-        "Matplotlib",
-        "Seaborn",
-        "Dash",
-        "Plotly"
+        "Matplotlib"
       ]
     },
     {
@@ -321,14 +318,7 @@
         "JavaScript",
         "JSON",
         "APIs",
-        "React",
-        "SVG",  
-        "D3", 
-        "RAWGraphs",  
-        "Chart.js", 
-        "Highcharts", 
-        "Vega-Lite",  
-        "dimplejs"
+        "D3"
       ]
     },
     {
@@ -338,9 +328,6 @@
         "RStudio",
         "Jupyter",
         "Tableau",
-        "Power BI",
-        "Looker",
-        "Spreadsheets",
         "Git"
       ]
     }
