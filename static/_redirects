@@ -5,6 +5,7 @@
 /ndoza/ /index.html 200
 
 # Redirect with 301
+/resume           /assets/pdf/christian-mendoza-resume.pdf
 /resumepdf        /assets/pdf/christian-mendoza-resume.pdf
 /philippines2018  https://youtu.be/3594028Ox7Q
 /pi2018           https://youtu.be/3594028Ox7Q
