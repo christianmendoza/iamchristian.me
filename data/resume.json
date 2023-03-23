@@ -1,7 +1,7 @@
 {
   "basics": {
     "name": "Christian Mendoza",
-    "label": "Data Engineer",
+    "label": "Technical Support Engineer",
     "picture": "/assets/images/christian-headshot.jpg",
     "email": "iamchristian/me/christian",
     "phone": "410/0041/512",
@@ -20,31 +20,36 @@
         "network": "LinkedIn",
         "username": "linkedin.com/in/christianmendoza",
         "url": "https://linkedin.com/in/christianmendoza",
-        "icon": "fab fa-linkedin-in"
+        "icon": "fab fa-linkedin-in",
+        "show": true
       },
       {
         "network": "GitHub",
         "username": "github.com/christianmendoza",
         "url": "https://github.com/christianmendoza",
-        "icon": "fab fa-github"
+        "icon": "fab fa-github",
+        "show": true
       },
       {
         "network": "Kaggle",
         "username": "kaggle.com/iamchristianmendoza",
         "url": "https://www.kaggle.com/iamchristianmendoza",
-        "icon": "fab fa-kaggle"
+        "icon": "fab fa-kaggle",
+        "show": false
       },
       {
         "network": "Tableau Public",
         "username": "tableau.com/profile/christian.mendoza",
         "url": "https://public.tableau.com/profile/christian.mendoza",
-        "icon": "fas fa-chart-bar"
+        "icon": "fas fa-chart-bar",
+        "show": false
       },
       {
         "network": "Website",
         "username": "iamchristian.me/ndoza",
         "url": "https://iamchristian.me",
-        "icon": "fas fa-globe"
+        "icon": "fas fa-globe",
+        "show": true
       }
     ]
   },
@@ -112,7 +117,7 @@
       "website": "https://camcreationlabs.com",
       "startDate": "2017-02-01",
       "endDate": "2019-05-06",
-      "show": false,
+      "show": true,
       "summary": "",
       "responsibilities": [
         "Built marketing funnel pages for chiropractors & podiatrists to increase overall revenue",
@@ -250,7 +255,7 @@
       ],
       "credentialId": "HFGJRDNF9DDG",
       "credentialUrl": "https://www.coursera.org/account/accomplishments/certificate/HFGJRDNF9DDG",
-      "show": true
+      "show": false
     },
     {
       "institution": "Google",
@@ -276,6 +281,41 @@
       "credentialId": "4KB4ZDVHL24S",
       "credentialUrl": "https://www.credly.com/badges/f0ceb695-d520-4d81-b821-d1ab7d20315f/public_url",
       "show": true
+    },
+    {
+      "institution": "Dataquest",
+      "location": "Online",
+      "website": "https://www.dataquest.io/path/data-engineer/",
+      "area": "Data Engineering",
+      "studyType": "Certificate",
+      "startDate": "",
+      "endDate": "2022-11-12",
+      "summary": [
+      ],
+      "gpa": "",
+      "courses": [
+        "Introduction to Python for Data Engineering",
+        "Intermediate Python for Data Engineering",
+        "Programming Concepts in Python",
+        "Introduction to Algorithms",
+        "Command Line for Data Science",
+        "Text Processing for Data Science",
+        "Intermediate Command Line for Data Science",
+        "Introduction to Git and Version Control",
+        "SQL Fundamentals",
+        "Intermediate SQL for Data Analysis",
+        "PostgresSQL for Data Engineering",
+        "Optimizing PostgreSQL Databases",
+        "NumPy for Data Engineering",
+        "Processing Large Datasets In Pandas",
+        "Parallel Processing for Data Engineering",
+        "Introduction to Data Structures",
+        "Recursion and Trees for Data Engineering",
+        "Building a Data Pipeline"
+      ],
+      "credentialId": "OPW8QM9JQMK2N8GCCYG9",
+      "credentialUrl": "https://app.dataquest.io/view_cert/OPW8QM9JQMK2N8GCCYG9",
+      "show": true
     }
   ],
   "awards": [
@@ -297,38 +337,9 @@
   ],
   "skills": [
     {
-      "name": "Data Analysis",
-      "level": "Intermediate",
+      "name": "",
+      "level": "",
       "keywords": [
-        "SQL",
-        "R",
-        "tidyverse",
-        "Python",
-        "pandas",
-        "NumPy",
-        "Matplotlib"
-      ]
-    },
-    {
-      "name": "Web Development",
-      "level": "Intermediate",
-      "keywords": [
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "JSON",
-        "APIs",
-        "D3"
-      ]
-    },
-    {
-      "name": "Tools &amp; Technologies",
-      "level": "Intermediate",
-      "keywords": [
-        "RStudio",
-        "Jupyter",
-        "Tableau",
-        "Git"
       ]
     }
   ],
@@ -359,6 +370,9 @@
       "startDate": "",
       "endDate": "",
       "keywords": [
+        "keyword",
+        "keyword",
+        "keyword"
       ]
     }
   ]

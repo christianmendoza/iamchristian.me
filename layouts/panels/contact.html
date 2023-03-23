@@ -1,5 +1,5 @@
 {{ $content := $.Site.Data.content.panel.contact }}
-{{ $social := $.Site.Data.content.social }}
+{{ $social := where $.Site.Data.content.social "show" true }}
 
 <section class="panel color4-alt">
   <div class="intro color4">

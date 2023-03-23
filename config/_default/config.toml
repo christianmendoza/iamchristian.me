@@ -1,6 +1,6 @@
 baseURL = "https://iamchristian.me/"
 languageCode = "en-us"
-title = "Christian Mendoza / Data Engineer"
+title = "Christian Mendoza / Technical Support Engineer"
 googleAnalytics = "UA-82162805-1"
 disableKinds = ["section", "taxonomy", "taxonomyTerm", "RSS", "sitemap"]
 copyright = "&copy; Christian Mendoza. Built with [Hugo](//gohugo.io). [[source](//github.com/christianmendoza/iamchristian.me)]"
@@ -15,5 +15,5 @@ watch = true
 [params]
   # METADATA
   name = "Christian Mendoza"
-  description = "Christian Mendoza is an aspiring data engineer—architecting, building, testing, and maintaining data platforms as a whole."
+  description = "Christian Mendoza is an experienced technical support engineer—researching, diagnosing, troubleshooting, and identifying solutions to resolve technical issues."
   socialImage = "/assets/images/social-headshot.jpg"

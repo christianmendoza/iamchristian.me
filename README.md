@@ -9,4 +9,3 @@ This is the source code for [iamchristian.me](//iamchristian.me).
 - Host: [Netlify](//netlify.com) for its blazing speed, performance and optimization features, and tight dev integration
 - Template: [Pixelarity](//pixelarity.com) and its creator [AJ](//twitter.com/ajlkn) for awesomely designed and expertly coded site templates
 - Form validation: [Pristine](//github.com/sha256/Pristine)
-- Résumé: WebPraktikos's [universal-resume](//github.com/WebPraktikos/universal-resume) template to utilize web browsers' print-to-PDF functionality
