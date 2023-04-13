@@ -22,10 +22,10 @@
 
 <link href="{{ .Site.BaseURL }}" rel="canonical" />
 
-{{ partial "styles" . }}
+{{ partial "_styles" . }}
 
 {{ if not .Site.IsServer }}
-  {{ partial "google-global-site-tag" . }}
+  {{ partial "_google-global-site-tag" . }}
 {{ end }}
 
 {{ if .IsHome }}
@@ -42,7 +42,7 @@
           "@type": "Person",
           "name": "{{ .Site.Params.name }}",
           "url": "{{ .Site.BaseURL }}",
-          "sameAs": [{{ range $index, $item := $.Site.Data.content.social }}{{ if $index }},{{ end }}"{{ .url }}"{{ end }}]
+          "sameAs": [{{ range $index, $item := after 1 $.Site.Params.social }}{{ if $index }},{{ end }}"{{ .url }}"{{ end }}]
         }
       ]
     }

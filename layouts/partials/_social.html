@@ -1,0 +1,32 @@
+<div id="container02" class="container columns full">
+  <div class="wrapper">
+    <div class="inner">
+      <div>
+        <ul id="icons01" class="style1 icons">
+        	{{ range (where .Site.Params.social "show" true) }}
+			      <li>
+			        <a class="n01" href="{{ .url }}" aria-label="{{ .label }}" target="_blank">
+			          <svg><use xlink:href="#icon-{{ .icon }}"></use></svg>
+			          <span class="label">{{ .label }}</span>
+			        </a>
+			      </li>
+			    {{ end }}
+        </ul>
+      </div>
+      <div>
+      	{{ with .Site.Params.email }}
+      		{{ $email := split . "/" }}
+	        <ul id="buttons03" class="style1 buttons">
+	          <li>
+	            <a class="button n01" data-user="{{ index $email 2 }}" data-domain="{{ index $email 0 }}" data-tld="{{ index $email 1 }}" href="javascript:void(0);" class="cryptedmail" onclick="window.location.href = 'mailto:' + this.dataset.user + '@' + this.dataset.domain + '.' + this.dataset.tld">
+	              <svg><use xlink:href="#icon-email"></use></svg>
+	              <span class="label">Email me</span>
+	            </a>
+	          </li>
+	        </ul>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</div>
+
