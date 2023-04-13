@@ -1,20 +1,32 @@
+{{ .Scratch.Set "container_image" .Site.Params.containerImage }}
+
 <!DOCTYPE HTML>
-<!--
-  Ethereal by Pixelarity
-  pixelarity.com | hello@pixelarity.com
-  License: pixelarity.com/license
--->
-<html>
+<html lang="en">
   <head>
-    {{ partial "head" . }}
+    {{ partial "_head" . }}
   </head>
-  <body>
-    <div id="page-wrapper">
-      <div id="wrapper">
-        {{ block "main" . }}{{ end }}
-        <div class="copyright">{{ .Site.Copyright | markdownify }}</div>
+  <body class="is-loading">
+    <div id="wrapper">
+      <div id="main">
+        <div class="inner">
+          <div id="container01" class="container default full">
+            <div class="wrapper">
+              <div class="inner">
+                <div id="image01" class="style1 image">
+                  <span class="frame">
+                    <img src="{{ .Site.Params.image }}" alt="{{ .Site.Params.name }}" />
+                  </span>
+                </div>
+                {{ block "main" . }}{{ end }}
+              </div>
+            </div>
+          </div>
+          {{ partial "_social" . }}
+        </div>
       </div>
+      <p id="text04" class="style3 style4">{{ .Site.Copyright | markdownify }}</p>
     </div>
-    {{ partial "scripts" . }}
+    {{ partial "_icons" . }}
+    {{ partial "_scripts" . }}
   </body>
 </html>

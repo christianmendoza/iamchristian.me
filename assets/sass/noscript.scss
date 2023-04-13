@@ -1,16 +1,18 @@
-@import 'libs/vars';
-@import 'libs/functions';
-@import 'libs/mixins';
-@import 'libs/skel';
+body {
+  overflow: auto !important;
+}
 
-/*
-	Ethereal by Pixelarity
-	pixelarity.com | hello@pixelarity.com
-	License: pixelarity.com/license
-*/
+body:after {
+  display: none !important;
+}
 
-/* Page */
+#main>.inner {
+  opacity: 1.0 !important;
+}
 
-	body {
-		overflow-x: scroll;
-	}
+#main {
+  opacity: 1.0 !important;
+  transform: none !important;
+  transition: none !important;
+  filter: none !important;
+}
