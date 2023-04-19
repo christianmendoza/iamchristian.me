@@ -1,7 +1,6 @@
 {{ define "main" }}
-
-  <p id="text01" class="style2">{{ .Site.Params.subheadline | markdownify }}</p>
-  <h1 id="text02" class="style1">{{ .Site.Params.name }}</h1>
-  <p id="text03" class="style3">{{ .Site.Params.blurb }}</p>
+  
+  <h1 id="text01">{{ .Site.Params.name }}</h1>
+  <p id="text02">{{ .Site.Params.blurb | markdownify }}</p>
 
 {{ end }}

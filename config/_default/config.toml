@@ -21,17 +21,23 @@ watch = true
   subheadline = "Aspiring Data Analyst"
   blurb = "Organizing messy data into insightful data visualizations, uncovering patterns and trends, and drawing meaningful conclusions."
   description = "Christian Mendoza is an aspiring data analyst—organizing data, uncovering patterns and insights, and drawing meaningful conclusions."
-  containerImage = "/assets/images/pennybacker-bridge.jpg"
   image = "/assets/images/christian-headshot.jpg"
   socialImage = "/assets/images/social-headshot.jpg"
-  email = "iamchristian/me/christian"
+  email = "me/iamchristian/christian"
+  emailLabel = "Email"
 
   # SOCIALS
   [[params.social]]
     label = "R&eacute;sum&eacute;"
-    icon = "cv"
+    icon = "pdf"
     url = "/resume"
     show = true
+
+  [[params.social]]
+    label = "Projects"
+    icon = "folder-alt"
+    url = "/projects"
+    show = false
 
   [[params.social]]
     label = "LinkedIn"
@@ -55,4 +61,4 @@ watch = true
     label = "Tableau"
     icon = "tableau"
     url = "https://public.tableau.com/profile/christian.mendoza"
-    show = false
+    show = true

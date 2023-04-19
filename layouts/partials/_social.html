@@ -1,32 +1,41 @@
-<div id="container02" class="container columns full">
-  <div class="wrapper">
-    <div class="inner">
-      <div>
-        <ul id="icons01" class="style1 icons">
-        	{{ range (where .Site.Params.social "show" true) }}
-			      <li>
-			        <a class="n01" href="{{ .url }}" aria-label="{{ .label }}" target="_blank">
-			          <svg><use xlink:href="#icon-{{ .icon }}"></use></svg>
-			          <span class="label">{{ .label }}</span>
-			        </a>
-			      </li>
-			    {{ end }}
-        </ul>
-      </div>
-      <div>
-      	{{ with .Site.Params.email }}
-      		{{ $email := split . "/" }}
-	        <ul id="buttons03" class="style1 buttons">
-	          <li>
-	            <a class="button n01" data-user="{{ index $email 2 }}" data-domain="{{ index $email 0 }}" data-tld="{{ index $email 1 }}" href="javascript:void(0);" class="cryptedmail" onclick="window.location.href = 'mailto:' + this.dataset.user + '@' + this.dataset.domain + '.' + this.dataset.tld">
-	              <svg><use xlink:href="#icon-email"></use></svg>
-	              <span class="label">Email me</span>
-	            </a>
-	          </li>
-	        </ul>
-        {{ end }}
-      </div>
-    </div>
-  </div>
-</div>
+<!-- <ul id="buttons01" class="buttons">
+  <li><a href="https://domain.ext/path" class="button n01"><svg>
+        <use xlink:href="#icon-0c4db87eff374f0f1ef47f8f043f0132"></use>
+      </svg><span class="label">Twitter</span></a></li>
+  <li><a href="https://domain.ext/path" class="button n02"><svg>
+        <use xlink:href="#icon-a1eb5cac0cee3b05a40d856c98ce14a5"></use>
+      </svg><span class="label">Facebook</span></a></li>
+  <li><a href="https://domain.ext/path" class="button n03"><svg>
+        <use xlink:href="#icon-85976685de3e4af37529a1ce5d57d2a7"></use>
+      </svg><span class="label">Instagram</span></a></li>
+  <li><a href="https://domain.ext/path" class="button n04"><svg>
+        <use xlink:href="#icon-694b338299bf630d8d2ec9bd42d31dbe"></use>
+      </svg><span class="label">TikTok</span></a></li>
+  <li><a href="https://domain.ext/path" class="button n05"><svg>
+        <use xlink:href="#icon-021973a1bb185878b41e1ef48ed6bbaa"></use>
+      </svg><span class="label">DM</span></a></li>
+  <li><a href="/cdn-cgi/l/email-protection#96e3e5f3e4d6f2f9fbf7fff8b8f3eee2" class="button n06"><svg>
+        <use xlink:href="#icon-c3c8e1063e3b7f84f6b54712741de139"></use>
+      </svg><span class="label">Email</span></a></li>
+</ul> -->
 
+<ul id="buttons01" class="buttons">
+  {{ range (where .Site.Params.social "show" true) }}
+    <li>
+      <a class="button {{ .icon }}" href="{{ .url }}" target="_blank">
+        <svg><use xlink:href="#icon-{{ .icon }}"></use></svg>
+        <span class="label">{{ .label | markdownify }}</span>
+      </a>
+    </li>
+  {{ end }}
+
+  {{ with .Site.Params.email }}
+  {{ $email := split . "/" }}
+    <li>
+      <a class="button email" href="javascript:void(0);"  target="_blank" data-tld="{{ index $email 0 }}" data-domain="{{ index $email 1 }}" data-user="{{ index $email 2 }}" class="cryptedmail" onclick="window.location.href='mailto:' + this.dataset.user + '@' + this.dataset.domain + '.' + this.dataset.tld">
+        <svg><use xlink:href="#icon-email"></use></svg>
+        <span class="label">{{ $.Site.Params.emailLabel }}</span>
+      </a>
+    </li>
+  {{ end }}
+</ul>

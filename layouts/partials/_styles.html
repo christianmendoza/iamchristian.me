@@ -1,6 +1,6 @@
 {{ $css_main := resources.Get "sass/main.scss" | resources.ExecuteAsTemplate "assets/css/main.scss" . | toCSS (dict "targetPath" "assets/css/main.css" "outputStyle" "compressed") }}
 {{ $css_noscript := resources.Get "sass/noscript.scss" | toCSS (dict "targetPath" "assets/css/noscript.css" "outputStyle" "compressed") }}
-{{ $css_fonts := resources.GetRemote "https://fonts.googleapis.com/css?display=swap&family=Inter:300,300italic%7CKrona+One:400,400italic" | toCSS (dict "targetPath" "assets/css/fonts.css" "outputStyle" "compressed") }}
+{{ $css_fonts := resources.GetRemote "https://fonts.googleapis.com/css?display=swap&family=Inter:200,800,800italic,600,600italic" | toCSS (dict "targetPath" "assets/css/fonts.css" "outputStyle" "compressed") }}
 
 {{ if .Site.IsServer }}
   <link rel="stylesheet" href="{{ $css_fonts.RelPermalink }}" />

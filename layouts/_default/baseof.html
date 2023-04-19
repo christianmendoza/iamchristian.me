@@ -1,32 +1,34 @@
-{{ .Scratch.Set "container_image" .Site.Params.containerImage }}
-
 <!DOCTYPE HTML>
 <html lang="en">
   <head>
     {{ partial "_head" . }}
   </head>
   <body class="is-loading">
+    {{ partial "_icons" . }}
     <div id="wrapper">
       <div id="main">
         <div class="inner">
-          <div id="container01" class="container default full">
+          <div id="container01" class="container columns">
             <div class="wrapper">
               <div class="inner">
-                <div id="image01" class="style1 image">
-                  <span class="frame">
-                    <img src="{{ .Site.Params.image }}" alt="{{ .Site.Params.name }}" />
-                  </span>
+                <div>
+                  <div id="image01" class="image">
+                    <span class="frame">
+                      <img src="{{ .Site.Params.image }}" alt="{{ .Site.Params.name }}" />
+                    </span>
+                  </div>
+                  {{ block "main" . }}{{ end }}
                 </div>
-                {{ block "main" . }}{{ end }}
+                <div>
+                  {{ partial "_social" . }}
+                </div>
               </div>
             </div>
           </div>
-          {{ partial "_social" . }}
         </div>
       </div>
-      <p id="text04" class="style3 style4">{{ .Site.Copyright | markdownify }}</p>
+      <p id="copyright">{{ .Site.Copyright | markdownify }}</p>
     </div>
-    {{ partial "_icons" . }}
     {{ partial "_scripts" . }}
   </body>
 </html>
