@@ -42,23 +42,23 @@ watch = true
   [[params.social]]
     label = "LinkedIn"
     icon = "linkedin"
-    url = "https://linkedin.com/in/christianmendoza"
+    url = "//linkedin.com/in/christianmendoza"
     show = true
 
   [[params.social]]
     label = "GitHub"
     icon = "github"
-    url = "https://github.com/christianmendoza"
+    url = "//github.com/christianmendoza"
     show = true
 
   [[params.social]]
     label = "Kaggle"
     icon = "kaggle"
-    url = "https://www.kaggle.com/iamchristianmendoza"
+    url = "//www.kaggle.com/iamchristianmendoza"
     show = false
 
   [[params.social]]
     label = "Tableau"
     icon = "tableau"
-    url = "https://public.tableau.com/profile/christian.mendoza"
+    url = "//public.tableau.com/profile/christian.mendoza"
     show = true
