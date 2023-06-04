@@ -28,7 +28,7 @@ watch = true
 
   # SOCIALS
   [[params.social]]
-    label = "R&eacute;sum&eacute;"
+    label = "Resume"
     icon = "pdf"
     url = "/resume"
     show = true

@@ -1,6 +1,6 @@
 {{ define "main" }}
   
-  <h1 id="text01">{{ .Site.Params.name }}</h1>
-  <p id="text02">{{ .Site.Params.blurb | markdownify }}</p>
+  <h1 id="text02">{{ substr .Site.Params.name 0 11 }}.</h1>
+  <p id="text01">{{ .Site.Params.blurb | markdownify }}</p>
 
 {{ end }}

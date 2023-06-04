@@ -1,5 +1,6 @@
 (function() {
   var on = addEventListener,
+    off = removeEventListener,
     $ = function(q) {
       return document.querySelector(q)
     },
@@ -52,7 +53,7 @@
           return v.replace('_', '.').replace('_', '');
         }],
         ['windows', /Windows NT ([0-9\.]+)/, null],
-        ['undefined', /Undefined/, null],
+        ['undefined', /Undefined/, null]
       ];
       for (i = 0; i < a.length; i++) {
         if (ua.match(a[i][1])) {
@@ -226,14 +227,17 @@
       window.onerror = null;
     }
   };
-  on('load', function() {
+  var loadHandler = function() {
     setTimeout(function() {
-      $body.className = $body.className.replace(/\bis-loading\b/, 'is-playing');
+      $body.classList.remove('is-loading');
+      $body.classList.add('is-playing');
       setTimeout(function() {
-        $body.className = $body.className.replace(/\bis-playing\b/, 'is-ready');
-      }, 1000);
+        $body.classList.remove('is-playing');
+        $body.classList.add('is-ready');
+      }, 2000);
     }, 100);
-  });
+  };
+  on('load', loadHandler);
   loadElements(document.body);
   var style, sheet, rule;
   style = document.createElement('style');
@@ -243,15 +247,14 @@
   if (client.mobile) {
     (function() {
       if (client.flags.lsdUnits) {
-        document.documentElement.style.setProperty('--viewport-height', '100dvh');
-        document.documentElement.style.setProperty('--background-height', '100lvh');
+        document.documentElement.style.setProperty('--viewport-height', '100svh');
+        document.documentElement.style.setProperty('--background-height', '100dvh');
       } else {
         var f = function() {
           document.documentElement.style.setProperty('--viewport-height', window.innerHeight + 'px');
           document.documentElement.style.setProperty('--background-height', (window.innerHeight + 250) + 'px');
         };
         on('load', f);
-        on('resize', f);
         on('orientationchange', function() {
           setTimeout(function() {
             (f)();
@@ -321,7 +324,15 @@
       scrollEvents.items.forEach(function(item) {
         var bcr, elementTop, elementBottom, state, a, b;
         if (!item.enter && !item.leave) return true;
-        if (!item.triggerElement || item.triggerElement.offsetParent === null) return true;
+        if (!item.triggerElement) return true;
+        if (item.triggerElement.offsetParent === null) {
+          if (item.state == true && item.leave) {
+            item.state = false;
+            (item.leave).apply(item.element);
+            if (!item.enter) item.leave = null;
+          }
+          return true;
+        }
         bcr = item.triggerElement.getBoundingClientRect();
         elementTop = top + Math.floor(bcr.top);
         elementBottom = elementTop + bcr.height;
@@ -413,45 +424,25 @@
         },
       },
       'slide-left': {
-        custom: true,
         transition: function(speed, delay) {
-          this.style.setProperty('--onvisible-speed', speed + 's');
-          if (delay) {
-            this.style.transition = 'opacity 0s linear ' + delay + 's';
-            this.style.setProperty('--onvisible-delay', delay + 's');
-          }
+          return 'transform ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '');
         },
         rewind: function() {
-          this.style.animation = 'none';
-          this.style.opacity = 0;
+          this.style.transform = 'translateX(100vw)';
         },
         play: function() {
-          this.style.opacity = 1;
-          this.style.animationName = 'onvisible-slide-left';
-          this.style.animationTimingFunction = 'ease';
-          this.style.animationDuration = 'var(--onvisible-speed)';
-          this.style.animationDelay = 'var(--onvisible-delay)';
+          this.style.transform = 'none';
         },
       },
       'slide-right': {
-        custom: true,
         transition: function(speed, delay) {
-          this.style.setProperty('--onvisible-speed', speed + 's');
-          if (delay) {
-            this.style.transition = 'opacity 0s linear ' + delay + 's';
-            this.style.setProperty('--onvisible-delay', delay + 's');
-          }
+          return 'transform ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '');
         },
         rewind: function() {
-          this.style.animation = 'none';
-          this.style.opacity = 0;
+          this.style.transform = 'translateX(-100vw)';
         },
         play: function() {
-          this.style.opacity = 1;
-          this.style.animationName = 'onvisible-slide-right';
-          this.style.animationTimingFunction = 'ease';
-          this.style.animationDuration = 'var(--onvisible-speed)';
-          this.style.animationDelay = 'var(--onvisible-delay)';
+          this.style.transform = 'none';
         },
       },
       'flip-forward': {
@@ -751,35 +742,51 @@
     },
   };
   onvisible.add('#image01', {
-    style: 'fade-down',
+    style: 'fade-in',
     speed: 1000,
-    intensity: 2,
-    delay: 0,
-    staggerOrder: '',
-    replay: false
-  });
-  onvisible.add('#text01', {
-    style: 'fade-right',
-    speed: 1000,
-    intensity: 2,
+    intensity: 10,
     delay: 0,
     staggerOrder: '',
     replay: false
   });
   onvisible.add('#text02', {
-    style: 'fade-up',
+    style: 'fade-left',
     speed: 1000,
-    intensity: 2,
-    delay: 250,
+    intensity: 0,
+    delay: 0,
+    staggerOrder: '',
+    replay: false
+  });
+  onvisible.add('#text01', {
+    style: 'fade-in',
+    speed: 1000,
+    intensity: 0,
+    delay: 0,
     staggerOrder: '',
     replay: false
   });
   onvisible.add('#buttons01', {
-    style: 'fade-left',
+    style: 'zoom-out',
     speed: 1000,
-    intensity: 6,
-    delay: 0,
+    intensity: 0,
+    delay: 250,
     stagger: 125,
+    replay: false
+  });
+  onvisible.add('#icons01', {
+    style: 'zoom-out',
+    speed: 1000,
+    intensity: 0,
+    delay: 750,
+    stagger: 125,
+    replay: false
+  });
+  onvisible.add('#container01', {
+    style: 'fade-right',
+    speed: 1000,
+    intensity: 10,
+    delay: 0,
+    staggerOrder: '',
     replay: false
   });
 })();

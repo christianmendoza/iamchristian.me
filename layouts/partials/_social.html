@@ -1,7 +1,8 @@
-<ul id="buttons01" class="buttons">
+<hr id="divider01" class="style1 full">
+<ul id="icons01" class="icons">
   {{ range (where .Site.Params.social "show" true) }}
     <li>
-      <a class="button {{ .icon }}" href="{{ .url }}" target="_blank">
+      <a class="button {{ .icon }}" href="{{ .url }}" aria-label="{{ .label }}" title="{{ .label }}" target="_blank">
         <svg><use xlink:href="#icon-{{ .icon }}"></use></svg>
         <span class="label">{{ .label | markdownify }}</span>
       </a>
@@ -11,7 +12,7 @@
   {{ with .Site.Params.email }}
   {{ $email := split . "/" }}
     <li>
-      <a class="button email" href="javascript:void(0);"  target="_blank" data-tld="{{ index $email 0 }}" data-domain="{{ index $email 1 }}" data-user="{{ index $email 2 }}" class="cryptedmail" onclick="window.location.href='mailto:' + this.dataset.user + '@' + this.dataset.domain + '.' + this.dataset.tld">
+      <a class="button email" href="javascript:void(0);" aria-label="{{ $.Site.Params.emailLabel }}" title="{{ $.Site.Params.emailLabel }}" target="_blank" data-tld="{{ index $email 0 }}" data-domain="{{ index $email 1 }}" data-user="{{ index $email 2 }}" class="cryptedmail" onclick="window.location.href='mailto:' + this.dataset.user + '@' + this.dataset.domain + '.' + this.dataset.tld">
         <svg><use xlink:href="#icon-email"></use></svg>
         <span class="label">{{ $.Site.Params.emailLabel }}</span>
       </a>
